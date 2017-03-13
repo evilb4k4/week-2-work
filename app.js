@@ -1,14 +1,25 @@
 'use strict';
-var storeHourArray = ['6am','7am']
-
-
+var storeHourArray = ['6am','7am'];
 var pikeAndFirst = {
   mincustomer: 23,
   maxcustomer: 65,
   avgCookieHour: 6.3,
-  getRandomNum: function() {
+  cookieTotal: [],
+  total: 0,
+  getRandomCustomer: function() {
     return Math.floor(Math.random() * (this.maxcustomer - this.mincustomer + 1)) + this.mincustomer;
   },
+  cookiePerHour: function(){
+    return Math.ceil(this.getRandomCustomer() * this.avgCookieHour);
+  },
+  fillTotal: function(){
+    this.cookieTotal.length = 15;
+    for (var i = 0; i < 15; i++){
+      var thisHour = this.cookiePerHour();
+      this.total += thisHour;
+      this.cookieTotal[i] = thisHour;
+    }
+  }
 };
 var seaTac = {
   mincustomer: 3,
