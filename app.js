@@ -23,15 +23,10 @@ var pikeAndFirst = {
   var hourlySales = document.createElement('ul');
   hourlySales.innerText = 'Sales per hours';
   var storeHourArray = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
-    // Create the list element:
+
     for(var i = 0; i < array.length; i++) {
-        // Create the list item:
         var item = document.createElement('li');
-
-        // Set its contents:
         item.appendChild(document.createTextNode(array[i]));
-
-        // Add it to the list:
         list.appendChild(item);
     }
 };
