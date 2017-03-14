@@ -38,7 +38,6 @@ function cookiesStore(name,maxcustomer,mincustomer,avgCookieHour) {
       hourlySales.appendChild(newEL);
     };
     body.appendChild(hourlySales);
-    console.log('almost there');
   };
 };
 
