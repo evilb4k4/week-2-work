@@ -65,7 +65,6 @@ function createTable(){
     th.innerText = storeHourArray[i];
   }
 }
-
 createTable();
 
 var pikeStore = new cookiesStore('1st and Pike',65,23,6.3);
