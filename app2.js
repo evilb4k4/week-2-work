@@ -1,6 +1,8 @@
 'use strict';
-var storeHourArray = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','Total'];
+var storeHourArray = ['','6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','Total'];
+var storeName = ['1st and Pike','SeaTac','Seattle Center','Capitol Hill','Alki'];
 var body = document.getElementsByTagName('body')[0];
+
 function cookiesStore(name,maxcustomer,mincustomer,avgCookieHour) {
   this.name = name;
   this.maxcustomer = maxcustomer;
@@ -26,20 +28,45 @@ function cookiesStore(name,maxcustomer,mincustomer,avgCookieHour) {
     this.cookieTotal.push(total);
   };
   console.log('still working');
+
   this.listItem = function(){
     this.fillTotal();
-    var newHeading = document.createElement('h2');
-    body.appendChild(newHeading);
-    newHeading.innerText = this.name;
-    var hourlySales = document.createElement('ul');
-    for (var i = 0; i < storeHourArray.length; i++){
-      var newEL = document.createElement('li');
-      newEL.innerText = storeHourArray[i] + ': ' + this.cookieTotal[i] + 'cookies';
-      hourlySales.appendChild(newEL);
+    var table = document.getElementsByTagName('table')[0];
+    var tableRow = document.createElement('tr');
+    var tableBody = document.createElement('tbody');
+    console.log('tableRow works');
+    var newTD = document.createElement('td');
+    newTD.innerText = this.name;
+    console.log('new td works' + newTD);
+    tableRow.appendChild(newTD);
+    for (var i = 0; i < this.cookieTotal.length; i++){
+      var hourlyTD = document.createElement('td');
+      hourlyTD.innerText = this.cookieTotal[i];
+      tableRow.appendChild(hourlyTD);
     };
-    body.appendChild(hourlySales);
+    tableBody.appendChild(tableRow);
+    table.appendChild(tableBody);
   };
-};
+}
+
+function createTable(){
+  var table = document.createElement('table');
+  body.appendChild(table);
+  var tablehead = document.createElement('thead');
+  table.appendChild(tablehead);
+  console.log('createTable function works');
+  var tableRow = document.createElement('tr');
+  tablehead.appendChild(tableRow);
+  var tableBody = document.createElement('tbody');
+  for (var i = 0; i < storeHourArray.length; i++){
+    var th = document.createElement('th');
+    tableRow.appendChild(th);
+    console.log('works too');
+    th.innerText = storeHourArray[i];
+  }
+}
+
+createTable();
 
 var pikeStore = new cookiesStore('1st and Pike',65,23,6.3);
 pikeStore.listItem();
