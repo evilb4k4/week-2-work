@@ -1,6 +1,10 @@
+*{
+  background-color: #93E6FF
+}
 table {
   font-family: ariel;
   border: 2px solid #000;
+  background-color: #04ff00 ;
 }
 td {
   font-family: impact;

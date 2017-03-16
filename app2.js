@@ -77,3 +77,22 @@ var capitolHillStore = new cookiesStore('Capitol Hill',38,20,2.3);
 capitolHillStore.listItem();
 var alkiStore = new cookiesStore('Alki',16,2,4.6);
 alkiStore.listItem();
+
+var form = document.getElementById('New-Store');
+function alertTheUser(event){
+  event.preventDefault();
+  var theForm = event.target;
+  var storeName = theForm.elements['storeName'].value;
+  var maxcustomer = Math.floor(theForm.elements['maxcustomer'].value);
+  var mincustomer = Math.floor(theForm.elements['mincustomer'].value);
+  var avgCookieHour = theForm.elements['avgCookieHour'].value;
+  if(maxcustomer < mincustomer){
+    console.log('incorrect amount enter');
+    confirm('You put the maximum sales is less than minimum sales');
+  } else {
+    var userStore = new cookiesStore(storeName, maxcustomer, mincustomer, avgCookieHour);
+    userStore.listItem();
+  }
+};
+form.addEventListener('submit', alertTheUser);
+console.log('last line works');
