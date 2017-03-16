@@ -10,3 +10,7 @@ td {
   font-family: impact;
   border: 2px solid #000;
 }
+fieldset {
+margin: auto;
+  
+}
