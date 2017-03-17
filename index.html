@@ -3,9 +3,22 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-  <title></title>
+  <title>Salmon Cookies</title>
   </head>
   <body>
+    <img src="salmon.png" alt="Salmon Picture"/>
+    <h1>Pat's Seattle famous Salmon Cookies</h1>
+    <form id = 'New-Store'>
+      <fieldset>
+        <legend>New Store</legend>
+        <label>Location:<input type="text" name="storeName" required="required"></label><br />
+        <label>Max Customers:<input type="number" name="maxcustomer" required="required"></label><br />
+        <label>Min customers:<input type="number" name="mincustomer" required="required"></label><br />
+        <label>Average cookie per customer:<input type="number" name="avgCookieHour" required="required"></label><br />
+        <input type="submit" value= "Submit">
+      </fieldset>
+    </form>
+
     <script src="app2.js" charset="utf-8"></script>
   </body>
 </html>

@@ -1,9 +1,16 @@
+*{
+  background-color: #93E6FF
+}
 table {
   font-family: ariel;
   border: 2px solid #000;
+  background-color: #04ff00 ;
 }
-
-td{
+td {
   font-family: impact;
   border: 2px solid #000;
+}
+fieldset {
+margin: auto;
+  
 }
