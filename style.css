@@ -4,6 +4,8 @@
   font-family:   serif;
 }
 table {
+  margin: auto;
+  margin-top: 10px;
   border-collapse: collapse;
   font-family: "Times New Roman";
   font-size: 20px;
@@ -20,13 +22,12 @@ th {
   background: lightblue;
   border-color: white;
 }
-section {
-  float: left;
+section.top {
   border-radius: 5px;
+  height: 100px;
+  margin: auto;
 }
-#left, #right {
-  width: 200px;
-}
+
 #center {
   width: 500px;
   margin: auto;
@@ -34,8 +35,36 @@ section {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-img.resize{
+img{
+   margin: auto;
+   margin-left: auto;
+   margin-right:auto;
    max-width:50%;
    max-height:50%;
-   margin: 5px;
+}
+IMG.displayed {
+    display: inline;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+}
+#pictureBar{
+  position: relative;
+  margin: auto;
 }
