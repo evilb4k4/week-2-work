@@ -1,15 +1,24 @@
 *{
   background-color: #93E6FF;
   box-sizing: border-box;
-  font-family: impact;
+  font-family:   serif;
 }
 table {
-  font-family: ariel;
+  border-collapse: collapse;
+  font-family: "Times New Roman";
+  font-size: 20px;
   border: 2px solid #000;
   background-color: #04ff00 ;
 }
-td {
-  border: 2px solid #000;
+td, th {
+  width: 2.2em;
+  height: 2.2em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+th {
+  background: lightblue;
+  border-color: white;
 }
 section {
   float: left;
@@ -19,8 +28,8 @@ section {
   width: 200px;
 }
 #center {
-  width: 380px;
-  margin: 0 10px;
+  width: 500px;
+  margin: auto;
   background-color: rgba(255, 255, 255, 0);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -28,4 +37,5 @@ section {
 img.resize{
    max-width:50%;
    max-height:50%;
+   margin: 5px;
 }
