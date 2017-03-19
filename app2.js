@@ -123,6 +123,9 @@ function alertTheUser(event){
     var userStore = new cookiesStore(storeName, maxcustomer, mincustomer, avgCookieHour);
     userStore.listItem();
     allStores.push(userStore);
+    var table = document.getElementsByTagName('table')[0];
+    var tableFoot = document.getElementsByTagName('tfoot')[0];
+    table.removeChild(tableFoot);
     storesHourlyTotal();
   }
   form.reset();
