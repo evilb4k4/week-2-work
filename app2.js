@@ -12,11 +12,9 @@ function cookiesStore(name,maxcustomer,mincustomer,avgCookieHour) {
   this.getRandomCustomer = function() {
     return Math.floor(Math.random() * (this.maxcustomer - this.mincustomer + 1)) + this.mincustomer;
   };
-  console.log('It works so far.');
   this.cookiePerHour = function(){
     return Math.ceil(this.getRandomCustomer() * this.avgCookieHour);
   };
-  console.log('still works');
   this.fillTotal = function(){
     var total = 0;
     this.cookieTotal.length = 15;
@@ -27,17 +25,14 @@ function cookiesStore(name,maxcustomer,mincustomer,avgCookieHour) {
     };
     this.cookieTotal.push(total);
   };
-  console.log('still working');
 
   this.listItem = function(){
     this.fillTotal();
     var table = document.getElementsByTagName('table')[0];
     var tableRow = document.createElement('tr');
     var tableBody = document.getElementsByTagName('tbody')[0];
-    console.log('tableRow works');
     var newTD = document.createElement('td');
     newTD.innerText = this.name;
-    console.log('new td works' + newTD);
     tableRow.appendChild(newTD);
     for (var i = 0; i < this.cookieTotal.length; i++){
       var hourlyTD = document.createElement('td');
@@ -54,7 +49,6 @@ function createTable(){
   body.appendChild(table);
   var tablehead = document.createElement('thead');
   table.appendChild(tablehead);
-  console.log('createTable function works');
   var tableRow = document.createElement('tr');
   tablehead.appendChild(tableRow);
   var tableBody = document.createElement('tbody');
@@ -62,7 +56,6 @@ function createTable(){
   for (var i = 0; i < storeHourArray.length; i++){
     var th = document.createElement('th');
     tableRow.appendChild(th);
-    console.log('works too');
     th.innerText = storeHourArray[i];
   }
 }
@@ -73,14 +66,12 @@ function storesHourlyTotal(){
   var tdTotal = document.createElement('td');
   tdTotal.innerText = 'Total per Hour';
   totalRow.appendChild(tdTotal);
-  console.log('new total row works');
   var table = document.getElementsByTagName('table')[0];
   var tableFoot = document.createElement('tfoot');
   for (var h = 0; h < storeHourArray.length - 1; h++){
     var hourlyTotal = 0;
     for (var c = 0; c < allStores.length; c++){
       hourlyTotal += allStores[c].cookieTotal[h];
-      console.log('new for loop works');
     }
     var tdTotal = document.createElement('td');
     tdTotal.innerText = hourlyTotal;
@@ -117,7 +108,6 @@ function alertTheUser(event){
   var mincustomer = Math.floor(theForm.elements['mincustomer'].value);
   var avgCookieHour = theForm.elements['avgCookieHour'].value;
   if(maxcustomer < mincustomer){
-    console.log('incorrect amount enter');
     alert('You put the maximum sales is less than minimum sales');
   } else {
     var userStore = new cookiesStore(storeName, maxcustomer, mincustomer, avgCookieHour);
@@ -131,4 +121,3 @@ function alertTheUser(event){
   form.reset();
 };
 form.addEventListener('submit', alertTheUser);
-console.log('last line works');
